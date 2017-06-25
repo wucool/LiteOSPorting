@@ -346,6 +346,7 @@ Huawei LiteOS 的中断使用
   - LiteOS的中断机制，目前使用了2K的内存。
 ### 9.5 移植LiteOS 内存问题，nrf52832 RAM 64K ，参照los_config.h文件中的注释，在工程中可不定义内存相关的宏。
   /* default LiteOS ram size level 
+  
   	RAM_SIZE_LEVEL_0 means kernel ram < 8k  , 
 	
   	RAM_SIZE_LEVEL_1 means kernel ram < 16k,
