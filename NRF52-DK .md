@@ -58,13 +58,13 @@
 在本文中可能出现下列标志，它们所代表的含义如下。
 
 
-![](./meta/keil/danger.png)     用于警示紧急的危险情形，若不避免，将会导致人员死亡或严重的人身伤害
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/danger.png)     用于警示紧急的危险情形，若不避免，将会导致人员死亡或严重的人身伤害
 
-![](./meta/keil/warning.png)    用于警示潜在的危险情形，若不避免，可能会导致人员死亡或严重的人身伤害
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/warning.png)     用于警示潜在的危险情形，若不避免，可能会导致人员死亡或严重的人身伤害
 
-![](./meta/keil/careful.png)    用于警示潜在的危险情形，若不避免，可能会导致中度或轻微的人身伤害
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/careful.png)     用于警示潜在的危险情形，若不避免，可能会导致中度或轻微的人身伤害
 
-![](./meta/keil/notice.png)     用于传递设备或环境安全警示信息，若不避免，可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果“注意”不涉及人身伤害
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/notice.png)      用于传递设备或环境安全警示信息，若不避免，可能会导致设备损坏、数据丢失、设备性能降低或其它不可预知的结果“注意”不涉及人身伤害
 
 | 说明	|		“说明”不是安全警示信息，不涉及人身、设备及环境伤害信息	|
 
@@ -109,11 +109,15 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
 首先下载Huawei LiteOS开发包，步骤如下：
 
  - 仓库地址：https://github.com/LITEOS/LiteOS_Kernel.git 
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/5-1.png) 
+ 
   - 点击”clone or download”按钮,下载源代码
   
   - 目录结构如下： 
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/5-2.png) 
+ 
 - 关于代码树中各个目录存放的源代码的相关内容简介如下：
 
 
@@ -161,22 +165,36 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
 ## 6创建Huawei LiteOS 工程
 ###  6.1 创建工程
 获取到LiteOS内核代码后，在platform下创建NRF52-DK目录,并拷贝platform\LOS_EXPAND_XXX目录下的所有文件到新创建的MRF52-DK目录下。如果您本地有开发板相关的驱动代码，可以先将您本地的驱动代码库拷贝到platform\NRF52-DK\Library目录下，以便添加到工程中。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-1.png) 
+ 
 在安装好Keil等开发工具后，我们使用Keil集成开发环境创建Huawei LiteOS工程，步骤如下：
   ● 打开Keil uVision5， 然后点击project->New uVision Project...创建一个新的工程
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-2.png) 
+ 
   ● 新建保存在project目录下名字NRF52-DK_KEIL，作为本工程目录,添加工程名文件名，比如HuaweiLiteOS
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-3.png) 
+ 
   ● 保存后会立即弹出芯片型号选择的窗口，根据实际的开发板的芯片进行选择，比如使用的是NRF52832芯片。 
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-4.png) 
+ 
   ● 然后选择要包含的开发基础库，比如CMSIS、DEVICE两个选项可以选择平台提供的支持包和启动汇编文件，目前LiteOS有提供的启动文件是配合中断动态注册功能使用的，本工程移植没有用到动态中注册功能。而且使用LiteOS启动文件，没有打开相应动态中断注册功能的宏开关，可以正常使用。如果不使用LiteOS的启动文件和不需要使用动态中断注册功能，可以勾选startup，也可以在工程建好后手动添加启动文件，我在此处保持默认，直接选择"OK"跳过。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-5.png) 
+ 
 至此，我们的工程已经创建完成，如下图所示：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-1-6.png) 
+ 
 完成上面的芯片和支持包选择之后，可以将内核源代码添加到工程中。
 ### 6.2 添加kernel代码到工程
  - 创建LiteOS的相关目录层级
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-2-1.png) 
+ 
 创建完成目录树之后我们添加源代码到目录树中，最终添加完成的内容如下：
  - 将kernel/base目录下的所有C文件添加到工程中的kernel下
  - 将kernel/cmsis目录下的所有C文件添加到工程中的cmsis下。
@@ -188,14 +206,20 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
  - 将\platform\NRF52-DK\Library目录下的驱动文件添加到工程的library目录下，同时把自己需要的驱动C文件添加进来，本工程添加了UART驱动。
  - 添加example/api目录下的所有C文件到工程的example目录
 完成代码添加后的工程目录如下图
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-2-2.png) 
+ 
 
 添加的UART文件
 ### 6.3 配置工程属性
   ● 配置target，如果需要调试log输出（printf）到IDE，可以选择Use MicroLib。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-1.png) 
+ 
   ● 编译C/C++设置中勾选C99选项
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-2.png) 
+ 
   ● 配置头文件搜索路径,可参考图片中所示内容
   
 ....\kernel\base\include; 
@@ -220,46 +244,74 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
 
 ....\platform\NRF52-DK\Library\include;
 
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-3.png) 
+ 
 
   - 配置debug使用的驱动，比如您使用的是nrf52832芯片，则使用选择J-LINK/J-TRACE Cortex，注意如果烧写出现“NO Cortex-M Device found in JTAG chain“
  - 注意打开"Options for Target 'LiteOS" 选项卡”Debug“，并点击旁边的”Setting“  然后选择SW。注意看下面图示。
  
 配置窗口：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-4.png) 
+ 
 
 
 出现的烧写错误提示窗口：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-5.png) 
+ 
 
 
 配置SW图示：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-6.png) 
+ 
 
   - 如果需要使用printf输出调试log，可以使用软件仿真的方式。打开 Debug (printf) Viewer窗口即可查看log。因为LiteOS有对log重定向，注意打开以下宏定义：    LOS_KERNEL_TEST_KEIL_SWSIMU才可以定向到 Debug (printf) Viewer窗口。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/6-3-7.png) 
+ 
 ## 7适配驱动代码
 
  - 内核代码中提供了bsp适配的框架代码，存放在文件夹platform\NRF52-DK下。
-         
+     
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-1.png) 
+      
 
   - 前面已经完成了驱动适配代码及驱动代码的添加，这里只有串口驱动文件nrf52_uart.c,gpio操作函数在nrf_gpio.h中，路径\platform\NRF52-DK\Library\hal。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-2.png) 
+ 
   - 根据本地Library代码提供的接口函数，来实现LiteOS中相关的bsp接口函数
 （1）修改los_bsp_adapter.c文件，配置系统时钟及SysTick，适配sysTick_Handler函数，本工程保持默认值即可；
 （2）实现los_bsp_led.c、los_bsp_key.c、los_bsp_uart.c等文件中提供的空函数，相应gpio脚对应板子的外设可在开发板背面看到。也可以在官网下载原理图查看。los_bsp_led.c、los_bsp_key.c需要添加头文件nrf_gpio.h，才可以用bsp库函数对gpio操作。los_bsp_uart.c需要添加nrf52_uart.h头文件。
   - 实现key功能，预留初始化函数里设置开发板button1 对应的gpio 13 为输入，获取key状态的函数里添加button1 对应gpio 读函数。这里需注意一点，gpio需配置下拉，不然有时候按键释放LED灯还会亮。具体如下图：
     
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-3.png) 
+  
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-4.png) 
+ 
 
 
   - 实现led功能，预留初始化函数配置开发板led1对应的gpio 17为输出，获取led 亮灭的函数里使用gpio操作函数置1或置0。具体如下图：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-5.png) 
+  
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-6.png) 
+ 
          
 
 
   - 实现UART功能，预留初始化函数调用平台UART 初始化接口对UART进行初始化，这里默认按开发板背面标示的gpio pin脚定义RTS 为5，  CTS为7，  TX为 6，  RX 8  FLOWCONTROL 为false，不使用流控，默认波特率115200，8位，无奇偶校验位，一停止位。在预留的UART 写byte函数里添加具体的UART写函数。然后在printf 重定向的fputc函数里的添加UART打印函数，这样才能把log打印到串口。最后打印的log 会布满屏幕，无法左对齐，所有需要对fputc函数做些调整。具体如下图：
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-7.png) 
+  
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-8.png) 
+  
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/7-1-9.png) 
+ 
 
 
 
@@ -270,7 +322,9 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
  - 目前LiteOS提供了单独测试每个功能的api代码，可在main()函数中调用los_demo_entry.c文件中的LOS_Demo_Entry()函数，并放开相应的宏定义。
   - 如果需要一次测试内核所有的功能，则可调用los_inspect_entry.c文件中的LOS_Inspect_Entry()函数。
  - LiteOS最小需要占用8K的RAM,使用Inspect巡检功能需要再增加1k RAM，nrf52832 芯片的RAM 64K足够inspect巡检功能。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/8-1-1.png) 
+ 
 示例代码如下：
 extern void LOS_Demo_Entry(void)；
 int main(void)
@@ -317,11 +371,15 @@ int main(void)
   - 使用软件仿真的方式在keil IDE的debug printf view中查看，将los_demo_debug.h中的LOS_KERNEL_DEBUG_OUT及LOS_KERNEL_TEST_KEIL_SWSIMU宏定义打开（如果是在IAR工程中则不需要打开LOS_KERNEL_TEST_KEIL_SWSIMU）。
 ### 8.2 编译调试
   - 打开工程后，菜单栏Project→Clean Targets、Build target、Rebuild All target files，可编译文件。点击Rebuild All target file，编译全部文件
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/8-2-1.png) 
+ 
   - 调试运行代码，查看测试结果输出：
 (1)如果调用LOS_Demo_Entry()函数进行测试，可根据《HuaweiLiteOSKernelDevGuide》文档中列出每项API功能测试结果来进行对比判断。
 (2)如果调用LOS_Inspect_Entry()函数进行功能巡检，gInspectErrCnt值为0则代表移植成功。按压nrf52832开发板的button1 同时led1 会亮，长按长亮，抬起就灭。按下瞬间会打印Inspect Key success 提示。
-
+ 
+![](https://github.com/wucool/LiteOSPorting/raw/9a20cd199127f7da3b385408831f1529d15ce35b/pictures/8-2-2.png) 
+ 
 
 ## 9如何使用LiteOS 开发
 LiteOS中提供的功能包括如下内容： 任务创建与删除、任务同步（信号量、互斥锁）、动态中断注册机制 等等内容，更详细的内容可以参考“HuaweiLiteOSKernelDevGuide”中描述的相关内容。下面章节将对任务和中断进行说明。
