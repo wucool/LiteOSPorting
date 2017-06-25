@@ -122,41 +122,42 @@ Keil工具需要开发者自行购买，Link在keil5.18安装以后就有，开�
 
 
 
-  一级目录 |  二级目录  | 说明
- :-----|-----|----
-doc	| | 	此目录存放的是LiteOS的使用文档和API说明文档
-example	| api| 	此目录存放的是内核功能测试用的相关用例的代码
-	n| include	| aip功能头文件存放目录
-kernel| 	base| 此目录存放的是与平台无关的内核代码，包含核心提供给外部调用  的接口的头文件以及内核中进程调度、进程通信、内存管理等等功能的核心代码。用户一般不需要修改此目录下的相关内容。
-	n| cmsis	| LiteOS提供的cmsis接口
-	n| config| 	此目录下是内核资源配置相关的代码，在头文件中配置了LiteOS所提供的各种资源所占用的内存池的总大小以及各种资源的数量，例如task的最大个数、信号量的最大个数等等
-	n| cpu| 	此目录以及以下目录存放的是与体系架构紧密相关的适配LiteOS的代码。比如目前我们适配了arm/cortex-m4及arm/cortex-m3系列对应的初始化内容。
-	n| include| 	内核的相关头文件存放目录
-	n| link	| 与IDE相关的编译链接相关宏定义
-platform| 	GD32F190R-EVAL| 	GD190开发板systick以及led、uart、key驱动bsp适配代码
-	n| GD32F450i-EVAL  | 	GD450开发板systick以及led、uart、key驱动bsp适配代码
-	n| STM32F412ZG-NUCLEO| 	STM32F412开发板systick以及led、uart、key驱动bsp适配代码
-	n| STM32F429I_DISCO  | 	STM32F429开发板systick以及led、uart、key驱动bsp适配代码
-	n| STM32L476RG_NUCLEO  | 	STM32L476开发板systick以及led、uart、key驱动bsp适配代码
-	n| LPC824_LITE  	| LPC824Lite开发板systick及驱动相关代码
-	n| LPC54110_BOARD 	| LPC54110开发板systick及驱动相关代码
-	n| MM32F103_MINI  | 	MM32F103开发板systick及驱动相关代码
-	n| STM32F746ZG_NUCLEO  	| STM32F746ZG开发板systick以及led、uart、key驱动bsp适配代码
-	n| LOS_EXPAND_XXX  	| 用于新扩展的开发板systick以及led、uart、key驱动bsp适配代码
-projects| 	STM32F412ZG-NUCLEO-KEIL	| stm32f412开发板的keil工程目录
-	n| STM32F429I_DISCO_IAR | 	stm32f429开发板的iar工程目录
-	n| STM32F429I_DISCO_KEIL	| stm32f429开发板的keil工程目录
-	n| STM32L476R-NUCLEO-KEIL| 	stm32l476开发板的keil工程目录
-	n| GD32F190R-EVAL-KEIL  | 	gd32f190开发板的keil工程目录
-	n| GD32F450i-EVAL-KEIL | 	gd32f450开发板的keil工程目录
-	n| LPC824_LITE_KEIL	 | lpc824Lite开发板的keil工程目录
-	n| LPC54110_BOARD_KEIL | 	lpc54110开发板的keil工程目录
-	n| MM32F103_MINI_KEIL | 	MindMotion MM32  MiniBoard开发板的keil工程目录
-	n| STM32F746ZG-NUCLEO-KEIL | 	NUCLEO-F746ZG 开发板的keil工程目录
-user| 		| 此目录存放用户测试代码，LiteOS的初始化和使用示例在main.c文件中
+| 一级目录 | 二级目录                | 说明                                                                                                                                                                     |
+|----------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| doc      |                         | 此目录存放的是LiteOS的使用文档和API说明文档                                                                                                                              |
+| example  | api                     | 此目录存放的是内核功能测试用的相关用例的代码                                                                                                                             |
+|          | include                 | aip功能头文件存放目录                                                                                                                                                    |
+| kernel   | base                    | 此目录存放的是与平台无关的内核代码，包含核心提供给外部调用的接口的头文件以及内核中进程调度、进程通信、内存管理等等功能的核心代码。用户一般不需要修改此目录下的相关内容。 |
+|          | cmsis                   | LiteOS提供的cmsis接口                                                                                                                                                    |
+|          | config                  | 此目录下是内核资源配置相关的代码，在头文件中配置了LiteOS所提供的各种资源所占用的内存池的总大小以及各种资源的数量，例如task的最大个数、信号量的最大个数等等               |
+|          | cpu                     | 此目录以及以下目录存放的是与体系架构紧密相关的适配LiteOS的代码。比如目前我们适配了arm/cortex-m4及arm/cortex-m3系列对应的初始化内容。                                     |
+|          | include                 | 内核的相关头文件存放目录                                                                                                                                                 |
+|          | link                    | 与IDE相关的编译链接相关宏定义                                                                                                                                            |
+| platform | GD32F190R-EVAL          | GD190开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                      |
+|          | GD32F450i-EVAL          | GD450开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                      |
+|          | STM32F412ZG-NUCLEO      | STM32F412开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                  |
+|          | STM32F429I_DISCO        | STM32F429开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                  |
+|          | STM32L476RG_NUCLEO      | STM32L476开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                  |
+|          | LPC824_LITE             | LPC824Lite开发板systick及驱动相关代码                                                                                                                                    |
+|          | LPC54110_BOARD          | LPC54110开发板systick及驱动相关代码                                                                                                                                      |
+|          | MM32F103_MINI           | MM32F103开发板systick及驱动相关代码                                                                                                                                      |
+|          | STM32F746ZG_NUCLEO      | STM32F746ZG开发板systick以及led、uart、key驱动bsp适配代码                                                                                                                |
+|          | LOS_EXPAND_XXX          | 用于新扩展的开发板systick以及led、uart、key驱动bsp适配代码                                                                                                               |
+| projects | STM32F412ZG-NUCLEO-KEIL | stm32f412开发板的keil工程目录                                                                                                                                            |
+|          | STM32F429I_DISCO_IAR    | stm32f429开发板的iar工程目录                                                                                                                                             |
+|          | STM32F429I_DISCO_KEIL   | stm32f429开发板的keil工程目录                                                                                                                                            |
+|          | STM32L476R-NUCLEO-KEIL  | stm32l476开发板的keil工程目录                                                                                                                                            |
+|          | GD32F190R-EVAL-KEIL     | gd32f190开发板的keil工程目录                                                                                                                                             |
+|          | GD32F450i-EVAL-KEIL     | gd32f450开发板的keil工程目录                                                                                                                                             |
+|          | LPC824_LITE_KEIL        | lpc824Lite开发板的keil工程目录                                                                                                                                           |
+|          | LPC54110_BOARD_KEIL     | lpc54110开发板的keil工程目录                                                                                                                                             |
+|          | MM32F103_MINI_KEIL      | MindMotion MM32 MiniBoard开发板的keil工程目录                                                                                                                            |
+|          | STM32F746ZG-NUCLEO-KEIL | NUCLEO-F746ZG 开发板的keil工程目录                                                                                                                                       |
+| user     |                         | 此目录存放用户测试代码，LiteOS的初始化和使用示例在main.c文件中                                                                                                           |
+
+获取Huawei LiteOS源代码之后，我们就可以开始创建自己的project开发工程了，详细内容请参考后续各章节。
 
 
-获取Huawei LiteOS源代码之后，我们就可以开始创建自己的project开发工程了，详细内容请参考后续各章节。
 ## 6创建Huawei LiteOS 工程
 ###  6.1 创建工程
 获取到LiteOS内核代码后，在platform下创建NRF52-DK目录,并拷贝platform\LOS_EXPAND_XXX目录下的所有文件到新创建的MRF52-DK目录下。如果您本地有开发板相关的驱动代码，可以先将您本地的驱动代码库拷贝到platform\NRF52-DK\Library目录下，以便添加到工程中。
@@ -346,7 +347,9 @@ Huawei LiteOS 的中断使用
 ### 9.5 移植LiteOS 内存问题，nrf52832 RAM 64K ，参照los_config.h文件中的注释，在工程中可不定义内存相关的宏。
   /* default LiteOS ram size level 
   	RAM_SIZE_LEVEL_0 means kernel ram < 8k  , 
-  	RAM_SIZE_LEVEL_1 means kernel ram < 16k, 
+	
+  	RAM_SIZE_LEVEL_1 means kernel ram < 16k,
+	
   	RAM_SIZE_LEVEL_2 means means kernel ram>=32k 
   */
 
